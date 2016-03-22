@@ -111,9 +111,6 @@ public class SerialTest implements SerialPortEventListener {
 				System.out.println("Faild to send string to arduino");
 				e.printStackTrace();
 			}
-			if (got.equals("exit")) {
-				System.out.println("got exit!!");
-			}
 		} while ((got.equals("exit")) == false);
 
 		System.out.println("exit");
@@ -151,18 +148,8 @@ public class SerialTest implements SerialPortEventListener {
 	public static void main(String[] args) throws Exception {
 		SerialTest main = new SerialTest();
 		main.initialize();
-//		Thread t = new Thread() {
-//			public void run() {
-//				//the following line will keep this app alive for 1000 seconds,
-//				//waiting for events to occur and responding to them (printing incoming messages to console).
-//				try {
-//					Thread.sleep(1000000);
-//				} catch (InterruptedException ie) {
-//				}
-//			}
-//		};
-//		t.start();
 		System.out.println("Started");
+		//start the input console
 		main.showConsole();
 	}
 
